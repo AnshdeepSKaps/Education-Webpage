@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+Bhaijaan+2&family=Roboto:wght@700&family=Work+Sans:wght@800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div id="navbar">
+            <div>
+                <img src="image/logo.png" alt="">
+            </div>
+            <div><a href="index.html" target="_blank">Home</a></div>
+            <div><a href="reg.html" target="_blank">Registration</a></div>
+            <div><a href="login.html" target="_blank">Login</a></div>
+        </div>
+    </nav>
+
+    <div id="home">
+        <h1 style="margin-top:3vh">Registration</h1>
+
+        <div id="home-box">
+            <div class="col">
+
+                <form name="form" action="" method="get" target="_blank">
+
+                    <div class="form-grid">
+
+                        <div class="form-input">
+                            <b>Name</b> <input type="text" name="name">
+                        </div>
+
+                        <div class="form-input">
+                            <b>Age</b> <input type="number" name="age" step="1" required>
+                        </div>
+
+                        <div class="form-input">
+                            <b>DOB</b> <input type="date" name="dob" required>
+                        </div>
+
+                        <div class="form-input">
+                            <b>Email ID</b> <input type="text" name="email" placeholder="example@gmail.com"
+                                pattern="[A-Za-z0-9]+@[a-z]+\.com" required>
+                        </div>
+
+                        <div class="form-input">
+                            <b>Password</b>
+                            <input type="password" name="password" placeholder="Min 8 characters"
+                                pattern="[A-Za-z0-9]{8,}">
+                        </div>
+
+                        <div class="form-input">
+                            <b>Phone Number</b> <input type="text" name="number" pattern="[1-9][0-9]{9}">
+                        </div>
+
+                        <div class="form-input">
+                            <b>Gender</b>
+                            <div class="gender">
+                                <div>
+                                    <input id="male" type="radio" name="gender" value="Male" required>
+                                    <label for="male">Male</label>
+                                </div>
+                                <div>
+                                    <input id="female" type="radio" name="gender" value="Female">
+                                    <label for="female">Female</label>
+                                </div>
+                                <div>
+                                    <input id="other" type="radio" name="gender" value="Other">
+                                    <label for="other">Other</label>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-input">
+                            <b>Registration No.</b> <input type="text" name="regno" pattern="[1-2][0-9][A-Z]{3}[0-9]{4}"
+                                placeholder="Ex:19BCI0923" required>
+                        </div>
+
+                        <div class="form-input">
+                            <b>School</b>
+                            <select name="school" id="" required>
+                                <option value="scope">SCOPE</option>
+                                <option value="sense">SENSE</option>
+                                <option value="select">SELECT</option>
+                                <option value="site">SITE</option>
+                                <option value="scheme">SCHEME</option>
+                                <option value="vitbs">VIT BS</option>
+                            </select>
+                        </div>
+
+                        <div class="form-input">
+                            <label for="hosteller"><b>Hostel inmate?</b></label>
+                            <input id="hosteller" style="width:2vw; height:2vw;" type="checkbox" name="hosteller"
+                                required>
+                        </div>
+
+                        <div class="form-input">
+                            <b>Passport size photo</b>
+                            <input style="border:none" id="photo" type="file" required>
+                        </div>
+                    </div>
+
+                    <div
+                        style="display:flex; align-items:center;justify-content:center;width:50%; margin: auto auto;margin-top:4vh;">
+                        <button class="btn submit" type="submit">Submit</button>
+                        <button class="btn" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+
+        const submit = document.getElementsByClassName("submit")[0]
+        submit.addEventListener("click", () => {
+            const name = document.form.name.value
+            if (name == "") {
+                alert("Please don't leave a blank name")
+            }
+            const password = document.form.password.value
+            if (!(/[A-Za-z0-9]{8,}/.test(password))) {
+                alert("Please have atleast 8 characters in password")
+            }
+        })
+    </script>
+
+</body>
+
+</html>

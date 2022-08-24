@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+Bhaijaan+2&family=Roboto:wght@700&family=Work+Sans:wght@800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav>
+        <div id="navbar">
+            <div>
+                <img src="image/logo.png" alt="">
+            </div>
+            <div><a href="index.html" target="_blank">Home</a></div>
+            <div><a href="reg.html" target="_blank">Registration</a></div>
+            <div><a href="login.html" target="_blank">Login</a></div>
+        </div>
+    </nav>
+
+    <div class="home">
+        <h1 style="margin-top:3vh">Login</h1>
+        <div id="home-box">
+            <div class="col" style="width:40vw">
+                <form name="form" action="" method="get" target="_blank">
+
+
+                    <img style="margin: 2vh auto; margin-top: -3vh" class="form-input" src="image/logo.png" alt="">
+
+                    <div>
+                        <div class="form-input">
+                            <b>Email ID</b> <input type="text" name="email" placeholder=""
+                                pattern="[A-Za-z0-9]+@[a-z]+\.com" required>
+                        </div>
+
+                        <div class="form-input">
+                            <b>Password</b>
+                            <input type="password" name="password" placeholder="" pattern="[A-Za-z0-9]{8,}">
+                        </div>
+                    </div>
+
+                    <div
+                        style="gap: 1rem;display:flex; flex-direction: column;align-items:center;justify-content:center;width:50%; margin: auto auto;margin-top:4vh;">
+                        <button class="btn" type="submit">Login</button>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+
+        const submit = document.getElementsByClassName("btn")[0]
+        submit.addEventListener("click", () => {
+            const email = document.form.email.value
+            if (!(/[A-Za-z0-9]+@[a-z]+\.com/.test(email))) {
+                alert("Please enter a valid email address: example@sample.com")
+            }
+            const password = document.form.password.value
+            if (!(/[A-Za-z0-9]{8,}/.test(password))) {
+                alert("Please enter a password with more than 8 characters")
+            }
+        })
+
+    </script>
+</body>
+
+</html>
